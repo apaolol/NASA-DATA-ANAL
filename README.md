@@ -106,45 +106,13 @@ The remaining blanks are all in Sulu:
 
 Leaving these blank does not mean the fish was absent. The file cannot tell us whether the reason was absence, nonreporting or something else.
 
-## 5. Did the filling method work well?
+## 5. Applying the selected method
 
-We checked it using yields whose true values we already knew:
+Group mean has already been selected. The notebook now applies it directly, without testing alternative methods or repeatedly hiding known values.
 
-1. Temporarily hide some recorded yields.
-2. Calculate group means without looking at the hidden values.
-3. Estimate the hidden yields.
-4. Compare the estimates with the real values.
+It fills 2,063 supported gaps and leaves 191 blanks. Each filled row records which group supplied the average and how many recorded values supported it. Original recorded yields are unchanged.
 
-We tried scattered missing values and four consecutive missing quarters, repeating each check three times.
-
-| Check | What it tells us | Result |
-|---|---|---|
-| Average absolute error, called MAE | How far estimates were from real yields, on average | 202.63 metric tons. |
-| Estimates within ±500 metric tons | How often an estimate met the brief's error tolerance | 91.82% of cases where enough data remained to estimate. |
-| Ability to produce an estimate | Whether the hidden value still had enough recorded local history | Almost all hidden values; a few scattered cases were unsupported. |
-
-**About 92 out of 100 supported validation estimates were within 500 tons. This does not guarantee the same accuracy for every missing value or every fish.**
-
-### Accuracy differs by fish
-
-Lower average error is better. The last column reports the share of supported estimates within the ±500-ton tolerance.
-
-| Fish category | Average error, metric tons | Within ±500 tons |
-|---|---:|---:|
-| Bali Sardinella | 686.97 | 83.26% |
-| Caesio | 31.77 | 99.02% |
-| Frigate Tuna | 340.17 | 83.26% |
-| Grouper | 32.27 | 99.77% |
-| Indian Mackerel | 108.31 | 96.12% |
-| Milkfish | 376.54 | 77.45% |
-| Roundscad | 257.50 | 86.04% |
-| Snapper | 26.85 | 99.92% |
-| Spanish Mackerel | 31.17 | 99.66% |
-| Tilapia | 139.08 | 92.57% |
-
-**Bali Sardinella's average error exceeds 500 tons.** Milkfish also has a noticeably lower within-tolerance percentage than several other categories. The overall average hides these differences. Lower-volume fish can have smaller absolute errors simply because their yields are smaller.
-
-These checks measure historical filling accuracy. They do not test a 2026 Q4 forecast, and they cannot reveal the true yields of combinations with no recorded history.
+Removing these experiments does not make the estimates certain. Group means can smooth unusual changes, and no ±500-ton accuracy guarantee or future forecasting claim is made by this final notebook.
 
 ## 6. What did EDA find?
 
@@ -262,4 +230,4 @@ The README tables summarize the current executed results. Update them if the dat
 - We cannot treat a filled yield as certain. Averages can smooth unusual events and large changes.
 - We cannot claim future forecast accuracy from historical gap-filling tests. Forecasting 2026 Q4 needs future environmental inputs or clear scenarios and a time-ordered forecast test.
 
-The full statistical methods, uncertainty checks and sources are documented in the notebook. The numerical results above come from the supplied data, not from the external fish-name reference.
+The full EDA methods, uncertainty checks and sources are documented in the notebook. The numerical results above come from the supplied data, not from the external fish-name reference.
